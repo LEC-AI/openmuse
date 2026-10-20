@@ -11,3 +11,7 @@ apps/mobile/android/
 .DS_Store
 *.tsbuildinfo
 artifacts/
+
+/node_modules
+/sandy/node_modules/
+/sandy-computer-data/

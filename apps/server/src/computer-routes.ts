@@ -21,6 +21,7 @@ export function computerRoutes(computer: ComputerService, files: Files) {
     const { receipt, width, height, warning } = await computer.desktopAction(
       c.get("owner"),
       await c.req.json(),
+      { idempotencyKey: c.req.header("Idempotency-Key") },
     );
     return c.json({ receipt, width, height, warning });
   });

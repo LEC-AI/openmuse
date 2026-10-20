@@ -1,0 +1,3 @@
+# Host-controlled desktop
+
+Install with `npm ci` in sandy, link the checkout root node_modules to sandy/node_modules, then run `node --import ./sandy/node_modules/tsx/dist/loader.mjs sandy/server.ts` from the checkout. Set SANDY_COMPUTER_TOKEN (32+ characters), SANDY_COMPUTER_OWNER and E2B_API_KEY. This starts the actual ComputerService and receipt Store without an agent, scheduler, goals or approval queue. Set SANDY_COMPUTER_DATA_DIR to durable storage. Start the sandbox through the authenticated /api/computer/start route before using the desktop. The host must approve input and supply Idempotency-Key. This fork also forwards that header in the existing full-app computer route. Receipts are execution evidence, not proof of external message delivery.
